@@ -11,12 +11,12 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         /*간단 문제 풀이*/
-        /*if((Integer.parseInt(br.readLine()) & 1) == 1)
+        if((Integer.parseInt(br.readLine()) & 1) == 1)
             bw.write("SK\n");
         else
             bw.write("CY\n");
 
-        bw.flush();*/
+        bw.flush();
 
         /*DP를 이용하여 문제 풀이*/
         int rockCnt = Integer.parseInt(br.readLine());
