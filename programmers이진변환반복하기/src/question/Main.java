@@ -19,22 +19,16 @@ public class Main {
         public void recur(String num){
             if(!num.equals("1")) {
                 convertCount++;
+
+                int oneCnt = 0;
                 for(char sub : num.toCharArray()){
-                    if(sub == '0')
-                        zeroCount++;
+                    if(sub == '1')
+                        oneCnt++;
                 }
 
-                num = num.replaceAll("0", "");
+                zeroCount += num.length() - oneCnt;
 
-                int current = num.length();
-                StringBuilder stringBuilder = new StringBuilder();
-
-                while(current > 0){
-                    stringBuilder.append(current % 2);
-                    current /= 2;
-                }
-
-                recur(stringBuilder.toString());
+                recur(Integer.toBinaryString(oneCnt));
             }
         }
     }
