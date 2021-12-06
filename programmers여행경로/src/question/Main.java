@@ -5,7 +5,6 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws Exception {
         Solution solution = new Solution();
-        System.out.println(solution.solution(new String[][] {{"ICN", "SFO"}, {"SFO", "ATL"}, {"SFO", "CTO"}, {"CTO", "HMM"}, {"ATL","ABC"}}));
         System.out.println(solution.solution(new String[][] {{"ICN", "B"}, {"B", "ICN"}, {"ICN", "A"}, {"A", "D"}, {"D", "A"}}));
         System.out.println(solution.solution(new String[][] {{"ICN", "AAA"}, {"ICN", "AAA"}, {"ICN", "AAA"}, {"AAA", "ICN"}, {"AAA", "ICN"}}));
         System.out.println(solution.solution(new String[][] {{"ICN", "COO"}, {"ICN", "BOO"}, {"COO", "ICN"}, {"BOO", "DOO"}}));
