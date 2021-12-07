@@ -46,7 +46,7 @@ public class Main {
         public void addNode(Node parent, Node child){
             if(parent.x < child.x){
                 if(parent.right == null) parent.right = child;
-                else addNode(root.right, child);
+                else addNode(parent.right, child);
             }
             else{
                 if(parent.left == null) parent.left = child;
