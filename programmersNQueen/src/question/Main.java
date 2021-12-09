@@ -14,30 +14,26 @@ public class Main {
         private int answer = 0;
 
         public int solution(int n) {
-            int[] queen = new int[n];
-
-            DFS(queen, n, 0);
-
+            int[] map = new int[n];
+            Backtrack(n, 0, map);
             return answer;
         }
 
-        public void DFS(int[] queen, int n, int yIndex) {
-            if (n == yIndex)
+        public void Backtrack(int n, int rowIndex, int[] map) {
+            if (n == rowIndex) {
                 answer++;
-            else {
+            } else {
                 for (int i = 0; i < n; i++) {
-                    if (check(queen, yIndex, i)) {
-                        queen[yIndex] = i;
-                        DFS(queen, n, yIndex + 1);
-                    }
+                    map[rowIndex] = i;
+                    if (check(map, rowIndex)) Backtrack(n, rowIndex + 1, map);
                 }
             }
         }
 
-        public boolean check(int[] queen, int yIndex, int x) {
-            for (int i = 0; i < yIndex; i++) {
-                if (queen[i] == x) return false;
-                if (Math.abs(i - yIndex) == Math.abs(queen[i] - x)) return false;
+        public boolean check(int[] map, int rowIndex) {
+            for (int i = 0; i < rowIndex; i++) {
+                if (map[i] == map[rowIndex]) return false;
+                if (Math.abs(map[i] - map[rowIndex]) == Math.abs(i - rowIndex)) return false;
             }
 
             return true;
