@@ -33,7 +33,7 @@ public class Main {
                 }
             }
 
-            int answer = costs[s - 1][a - 1] + costs[s - 1][b - 1];
+            int answer = Integer.MAX_VALUE;
 
             for (int i = 0; i < n; i++) {
                 if(costs[s - 1][i] != INF && costs[i][a - 1] != INF && costs[i][b - 1] != INF)
