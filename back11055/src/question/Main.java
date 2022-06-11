@@ -1,0 +1,41 @@
+package question;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer stringTokenizer;
+
+        int num = Integer.parseInt(br.readLine());
+        stringTokenizer = new StringTokenizer(br.readLine());
+
+        int[] arr = new int[num];
+        int[] dp = new int[num];
+
+        for(int i=0; i<num; i++)
+            arr[i] = Integer.parseInt(stringTokenizer.nextToken());
+
+        dp[0] = arr[0];
+
+        for(int i=1; i<num; i++){
+            int max = 0;
+            for(int j=0; j<i; j++) {
+                if(arr[i] > arr[j])
+                    max = Math.max(dp[j], max);
+            }
+            dp[i] = max + arr[i];
+        }
+
+        Arrays.sort(dp);
+
+        bw.write(dp[num-1] + "\n");
+        bw.flush();
+    }
+}
