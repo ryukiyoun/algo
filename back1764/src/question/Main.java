@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
-
+//재풀이
 //todo 시간초과
 public class Main {
     public static void main(String[] args) throws Exception {
