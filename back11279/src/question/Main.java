@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Comparator;
 import java.util.PriorityQueue;
-
+//재풀이
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
